@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a; /* dark slate */
+  color: #e5e7eb;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  width: 380px;
+  height: 520px;
+  background: #020617; /* almost black */
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  border: 1px solid #1e293b;
+}
+
+.chat-header {
+  padding: 14px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #f8fafc;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 14px 14px 0 0;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+}
+
+/* Scrollbar (optional but cool) */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+.message {
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* User bubble */
+.message.user {
+  background: #1e3a8a;
+  color: #e0e7ff;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+/* Assistant bubble */
+.message.assistant {
+  background: #020617;
+  color: #e5e7eb;
+  border: 1px solid #1e293b;
+  align-self: flex-start;
+}
+
+/* Typing bubble */
+.message.assistant:last-child {
+  opacity: 0.85;
+}
+
+.chat-input {
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #1e293b;
+  background: #020617;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+  outline: none;
+  background: #020617;
+  color: #f8fafc;
+}
+
+.chat-input input::placeholder {
+  color: #94a3b8;
+}
+
+.chat-input button {
+  margin-left: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.chat-input button:hover {
+  background: #6366f1;
+}
+
+.chat-input button:disabled {
+  background: #334155;
+  cursor: not-allowed;
+}
